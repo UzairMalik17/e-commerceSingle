@@ -4,7 +4,6 @@ import Link from "next/link";
 import Wrapper from "../../Shared/ComponentWrapper/Wrapper";
 import * as Icons from "../../../Svg/Icons";
 import PasswordInput from "@/components/Shared/Inputs/PasswordInput";
-import CheckboxInput from "@/components/Shared/Inputs/CheckboxInput";
 import TextInput from "@/components/Shared/Inputs/TextInput";
 import TelInput from "@/components/Shared/Inputs/TelInput";
 
@@ -26,6 +25,7 @@ const SignupForm = () => {
     otp: "",
   });
   const [phoneInput, setPhoneInput] = useState<any>("");
+  const [match, setMatch] = useState<boolean>(false);
   const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setFormData({
@@ -36,6 +36,7 @@ const SignupForm = () => {
       confirmPassword: "",
       otp: "",
     });
+    setMatch(false);
   };
 
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -45,6 +46,10 @@ const SignupForm = () => {
       [name]: value,
     });
   };
+  useEffect(() => {
+    setMatch(formData.password === formData.confirmPassword);
+    console.log(match);
+  }, [formData.password, formData.confirmPassword]);
   useEffect(() => {
     setFormData({
       ...formData,
@@ -67,13 +72,14 @@ const SignupForm = () => {
               />
             </div>
             <TextInput
-              placeholder="Full Name"
+              placeholder={"Enter Your Full Name"}
               state={formData.name}
               SetState={changeHandler}
               Type="text"
               IsCompulsory
               label="Full Name"
               Name="name"
+              borderColor="#008026"
             />
             <TextInput
               placeholder="Email Address"
@@ -83,6 +89,7 @@ const SignupForm = () => {
               IsCompulsory
               label="Email Address"
               Name="email"
+              borderColor="#008026"
             />
             <TelInput
               IsCompulsory
@@ -95,34 +102,44 @@ const SignupForm = () => {
                 state={formData.password}
                 SetState={changeHandler}
                 label="Password"
-                name="password"
+                Name="password"
                 IsCompulsory
-                placeholder={"Password"}
+                placeholder={"Enter Password (min length 6 numbers)"}
               />
               <PasswordInput
-                state={formData.password}
+                state={formData.confirmPassword}
                 SetState={changeHandler}
                 label="Confirm Password"
-                name="confirmPassword"
+                Name="confirmPassword"
                 IsCompulsory
-                placeholder={"Confirm Password"}
+                placeholder={"Enter Password (min length 6 numbers)"}
               />
             </div>
             <div className="w-full flex flex-col justify-start items-end gap-0.5">
               <TextInput
-                placeholder="OTP"
+                placeholder={"Enter the 4 digit verification code"}
                 state={formData.otp}
                 SetState={changeHandler}
                 Type="text"
                 IsCompulsory
                 label="OTP"
                 Name="otp"
+                borderColor="#008026"
               />
               <p className="text-[#008026] text-xs">Resend OTP?</p>
             </div>
-
+            <p
+              className={`w-full text-center text-red-600 text-base font-semibold ${
+                match ? "hidden" : "inline-block"
+              }`}>
+              Passwords do not Match!
+            </p>
             <input
-              className="w-full h-[60px] bg-black text-base capitalize text-white hover:cursor-pointer"
+              className={`w-full h-[60px] text-base capitalize text-white  ${
+                match
+                  ? "hover:cursor-pointer bg-black"
+                  : "hover:cursor-not-allowed bg-gray-400"
+              }`}
               type="submit"
               value={"Create Account"}
             />

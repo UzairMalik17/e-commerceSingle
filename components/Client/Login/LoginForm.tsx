@@ -58,7 +58,7 @@ const LoginForm = () => {
               state={formData.password}
               SetState={changeHandler}
               label="Password"
-              name="password"
+              Name="password"
               IsCompulsory
               placeholder={"Enter Password (min length 6 numbers)"}
             />

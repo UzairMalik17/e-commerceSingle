@@ -11,6 +11,7 @@ interface Props {
   Multiline?: boolean;
   Rows?: number;
   maxLength?: number;
+  borderColor: string;
 }
 
 const TextInput: React.FC<Props> = ({
@@ -24,6 +25,7 @@ const TextInput: React.FC<Props> = ({
   Multiline,
   Rows,
   maxLength,
+  borderColor,
 }: Props) => {
   return (
     <TextField
@@ -36,7 +38,7 @@ const TextInput: React.FC<Props> = ({
         },
         "& .MuiOutlinedInput-root": {
           "&.Mui-focused fieldset": {
-            borderColor: "#ffbb38",
+            borderColor: { borderColor },
           },
         },
         // '& .MuiInputBase-root': {

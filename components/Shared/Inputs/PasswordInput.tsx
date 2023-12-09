@@ -10,7 +10,7 @@ interface Props {
   label: string;
   IsCompulsory: boolean;
   placeholder: string;
-  name?: string;
+  Name?: string;
   state: string;
   SetState: any;
 }
@@ -20,7 +20,7 @@ const PasswordInput: React.FC<Props> = ({
   SetState,
   IsCompulsory,
   placeholder,
-  name,
+  Name,
 }) => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -66,7 +66,7 @@ const PasswordInput: React.FC<Props> = ({
         value={state}
         onChange={SetState}
         placeholder={placeholder}
-        name={name}
+        name={Name}
       />
     </FormControl>
   );

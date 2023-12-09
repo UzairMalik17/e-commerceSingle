@@ -28,6 +28,7 @@ module.exports = {
         },
         gray: "#EFEFEF",
         lightGray: "#D3D3D3",
+        leafGreen: "#008026",
         input: "#8E8E8E",
         lavaRed: "#EF2623",
         lightningYellow: "#FFBB38",
