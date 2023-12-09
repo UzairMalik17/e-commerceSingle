@@ -34,7 +34,7 @@ const PasswordInput: React.FC<Props> = ({
   return (
     <FormControl
       sx={{
-        m: 1,
+        m: 0,
         width: "100%",
         "& label.Mui-focused": {
           color: "#ffbb38",

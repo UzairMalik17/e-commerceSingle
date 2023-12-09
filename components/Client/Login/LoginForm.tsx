@@ -39,7 +39,7 @@ const LoginForm = () => {
   }, [phoneInput]);
   return (
     <Wrapper>
-      <div className="w-full h-[600px] grid lg:grid-cols-2 gap-12">
+      <div className="w-full h-full grid lg:grid-cols-2 gap-12">
         <form
           onSubmit={submitHandler}
           className="w-full h-full m-auto md:px-8 md:py-16 px-2 py-6">
