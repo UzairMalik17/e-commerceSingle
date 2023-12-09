@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ThinScrollbar::-webkit-scrollbar {
+  width: 3px;
+}
+.ThinScrollbar::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #e1e1f4;
+  border-radius: 10px;
+}
+
+/* Handle */
+.ThinScrollbar::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 10px;
+  color: gray;
+}
+.HideScroll::-webkit-scrollbar {
+  width: 3px !important;
+  height: 0px !important;
+}
+.HideScroll::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #e1e1f4;
+  border-radius: 10px;
+}
+.HideScroll::-webkit-scrollbar-thumb {
+  background: gray;
+  color: gray;
+}
+.react-tel-input .form-control:focus {
+  border: 2px solid #008026 !important;
+  outline: none;
+}
