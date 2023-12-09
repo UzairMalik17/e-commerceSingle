@@ -97,7 +97,7 @@ const SignupForm = () => {
               state={formData.phone}
               SetState={(phoneInput: any) => setPhoneInput(phoneInput)}
             />
-            <div className="w-full flex flex-row justify-between items-center gap-8">
+            <div className="w-full flex flex-col sm:flex-row justify-between items-center gap-8">
               <PasswordInput
                 state={formData.password}
                 SetState={changeHandler}

@@ -21,7 +21,7 @@ const TelInput: React.FC<Props> = ({ state, SetState, IsCompulsory, Name }) => {
         required: { IsCompulsory },
       }}
       buttonStyle={{
-        padding: "0 5px",
+        padding: "0 8px",
       }}
       country={"us"}
       value={state}
