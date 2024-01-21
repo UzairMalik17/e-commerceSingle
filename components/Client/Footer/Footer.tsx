@@ -37,8 +37,7 @@ const Footer: React.FC = () => {
                   <Link
                     key={index}
                     href={item.Route}
-                    className="font-inter font-normal text-black-off/60 text-sm hover:underline hover:text-main-brand"
-                  >
+                    className="font-inter font-normal text-black-off/60 text-sm hover:underline hover:text-main-brand">
                     {item.Title}
                   </Link>
                 );
@@ -56,8 +55,7 @@ const Footer: React.FC = () => {
                   <Link
                     key={index}
                     href={item.Route}
-                    className="font-inter font-normal text-black-off/60 text-[14px] hover:underline hover:text-main-brand"
-                  >
+                    className="font-inter font-normal text-black-off/60 text-[14px] hover:underline hover:text-main-brand">
                     {item.Title}
                   </Link>
                 );
@@ -75,8 +73,7 @@ const Footer: React.FC = () => {
                   <Link
                     key={index}
                     href={item.Route}
-                    className="font-inter font-normal text-black-off/60 text-[14px] hover:underline hover:text-main-brand"
-                  >
+                    className="font-inter font-normal text-black-off/60 text-[14px] hover:underline hover:text-main-brand">
                     {item.Title}
                   </Link>
                 );
@@ -104,7 +101,7 @@ const Footer: React.FC = () => {
           {/* Payment cards */}
           <NextImage
             imageSrc="/Assets/Footer/payment-card.webp"
-            containerStyle="w-[318px] h-[28px]"
+            containerStyle="w-[200px] md:w-[318px] h-[28px]"
             imageStyle="object-contain"
           />
         </div>
