@@ -3,6 +3,7 @@ import Navbar from "@/components/Client/Navigation/ClientNavigation";
 import Footer from "@/components/Client/Footer/Footer";
 import { Inter } from "next/font/google";
 import { useRouter } from "next/router";
+import Sidebar from "@/components/Client/Dashboard/Sidebar/Sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 type Props = {
@@ -19,7 +20,9 @@ const layout: React.FC<Props> = ({ children }: Props) => {
       } ${inter.className}`}>
       {!AdminRoute && <Navbar />}
       {AdminRoute && (
-        <div className={`w-full h-screen bg-slate-600`}>sidebar</div>
+        <div className={`w-full h-screen`}>
+          <Sidebar />
+        </div>
       )}
       <div className={`w-full h-full`}>
         <main>{children}</main>
