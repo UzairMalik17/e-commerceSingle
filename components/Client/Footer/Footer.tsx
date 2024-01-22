@@ -101,7 +101,7 @@ const Footer: React.FC = () => {
           {/* Payment cards */}
           <NextImage
             imageSrc="/Assets/Footer/payment-card.webp"
-            containerStyle="w-[200px] md:w-[318px] h-[28px]"
+            containerStyle="w-[230px] sm:w-[318px] h-[28px]"
             imageStyle="object-contain"
           />
         </div>

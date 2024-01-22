@@ -26,7 +26,6 @@ const layout: React.FC<Props> = ({ children }: Props) => {
       )}
       <div className={`w-full h-full`}>
         <main>{children}</main>
-        main screen
         <Footer />
       </div>
     </div>
