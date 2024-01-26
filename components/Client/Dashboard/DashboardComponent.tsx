@@ -1,5 +1,6 @@
 import React from "react";
 import OverviewCard from "./OverviewCard/OverviewCard";
+import Statistics from "./Statistics/Statistics";
 const CardData = [
   {
     title: "Orders",
@@ -33,6 +34,7 @@ const DashboardComponent = () => {
           );
         })}
       </div>
+      <Statistics />
     </div>
   );
 };

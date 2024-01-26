@@ -1,4 +1,5 @@
 import React from "react";
+import Chart from "../Chart/Chart";
 interface Props {
   title: string;
   status: string;
@@ -19,7 +20,9 @@ const OverviewCard: React.FC<Props> = ({ title, status, amount, style }) => {
           <p className="text-2xl font-semibold">{amount}</p>
           <p className="text-black-cool text-[14px] font-semibold">Monthly</p>
         </div>
-        <div className="w-full h-full col-span-2"></div>
+        <div className="w-full h-full col-span-2">
+          <Chart />
+        </div>
       </div>
     </div>
   );
