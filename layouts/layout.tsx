@@ -16,7 +16,7 @@ const layout: React.FC<Props> = ({ children }: Props) => {
   return (
     <div
       className={`w-full h-full grid ${
-        AdminRoute && "md:grid-cols-[250px,calc(100%-258px)]"
+        AdminRoute && "md:grid-cols-[250px,calc(100%-282px)]"
       } ${inter.className}`}>
       {!AdminRoute && <Navbar />}
       {AdminRoute && (
@@ -24,7 +24,7 @@ const layout: React.FC<Props> = ({ children }: Props) => {
           <Sidebar />
         </div>
       )}
-      <div className={`w-full h-full`}>
+      <div className={`w-full h-full ${AdminRoute && "mx-4"}`}>
         <main>{children}</main>
         <Footer />
       </div>

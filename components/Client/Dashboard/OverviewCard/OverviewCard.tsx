@@ -33,7 +33,7 @@ const data = [
 const OverviewCard: React.FC<Props> = ({ title, status, amount, style }) => {
   return (
     <div
-      className={`w-full h-full flex flex-col items-start justify-between gap-6 border-[1px] border-lightGray p-4 ${style}`}>
+      className={`w-full h-full flex flex-col items-start justify-between gap-6 border-[1px] drop-shadow-lg border-lightGray p-4 ${style}`}>
       <div className="w-full flex flex-col items-left justify-start">
         <p>{title}</p>
         <p className="text-sm text-lavaRed">{status}</p>

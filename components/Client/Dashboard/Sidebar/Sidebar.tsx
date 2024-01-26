@@ -40,7 +40,7 @@ const Sidebar = () => {
     setIsOpen((prevState) => !prevState);
   };
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full bg-background">
       <div className="w-full h-full hidden md:flex flex-col items-center justify-between gap-6 p-4">
         <div className="w-full h-full flex flex-col items-center justify-start gap-8">
           <Link href="/" className="relative w-[153px] h-[70px]">
@@ -57,8 +57,8 @@ const Sidebar = () => {
               <div className="w-full h-full flex items-center justify-center rounded-full bg-black bg-opacity-0 group-hover:bg-opacity-50 hover:cursor-pointer transition-opacity">
                 <FiEdit className="w-[25px] h-[25px] text-white opacity-0 group-hover:opacity-100" />
               </div>
-              <div className="w-3 h-3 rounded-full bg-green-500 absolute right-0.5 bottom-0.5 z-20 border-2 border-solid border-white">
-                <div className="w-full h-full rounded-full animate-ping bg-green-500 z-20"></div>
+              <div className="w-3 h-3 rounded-full bg-leafGreen absolute right-0.5 bottom-0.5 z-20 border-2 border-solid border-background">
+                <div className="w-full h-full rounded-full animate-ping bg-leafGreen z-20"></div>
               </div>
             </div>
             <p className="text-lg">John Doe</p>
@@ -82,7 +82,7 @@ const Sidebar = () => {
         <div className="w-full h-full flex flex-col items-center justify-end">
           <Link
             href={"/"}
-            className="w-full text-center text-white bg-black py-2">
+            className="w-full text-center text-white-main bg-black-main py-2">
             Continue Shopping
           </Link>
         </div>
@@ -95,7 +95,7 @@ const Sidebar = () => {
             onClose={toggleDrawer}
             direction="left"
             size={"70vw"}>
-            <div className="w-full h-full flex flex-col items-center justify-between gap-6 p-4">
+            <div className="w-full h-full flex flex-col items-center justify-between gap-6 bg-background p-4">
               <div className="w-full h-full flex flex-col items-center justify-start gap-8">
                 <Link href="/" className="relative w-[153px] h-[70px]">
                   <Image
@@ -111,8 +111,8 @@ const Sidebar = () => {
                     <div className="w-full h-full flex items-center justify-center rounded-full bg-black bg-opacity-0 group-hover:bg-opacity-50 hover:cursor-pointer transition-opacity">
                       <FiEdit className="w-[25px] h-[25px] text-white opacity-0 group-hover:opacity-100" />
                     </div>
-                    <div className="w-3 h-3 rounded-full bg-green-500 absolute right-0.5 bottom-0.5 z-20 border-2 border-solid border-white">
-                      <div className="w-full h-full rounded-full animate-ping bg-green-500 z-20"></div>
+                    <div className="w-3 h-3 rounded-full bg-leafGreen absolute right-0.5 bottom-0.5 z-20 border-2 border-solid border-background">
+                      <div className="w-full h-full rounded-full animate-ping bg-leafGreen z-20"></div>
                     </div>
                   </div>
                   <p className="text-lg">John Doe</p>
@@ -135,7 +135,7 @@ const Sidebar = () => {
                 <div className="w-full h-full flex flex-col items-center justify-end px-4">
                   <Link
                     href={"/"}
-                    className="w-full text-center text-white bg-black py-2">
+                    className="w-full text-center text-white-main bg-black-main py-2">
                     Continue Shopping
                   </Link>
                 </div>
