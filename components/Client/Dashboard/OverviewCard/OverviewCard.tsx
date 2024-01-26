@@ -1,35 +1,11 @@
-import { title } from "process";
 import React from "react";
-import { AreaChart, Area, ResponsiveContainer } from "recharts";
 interface Props {
   title: string;
   status: string;
   amount: string;
   style?: string;
 }
-const data = [
-  {
-    uv: 9400,
-  },
-  {
-    uv: 10398,
-  },
-  {
-    uv: 19800,
-  },
-  {
-    uv: 13908,
-  },
-  {
-    uv: 14800,
-  },
-  {
-    uv: 23800,
-  },
-  {
-    uv: 24300,
-  },
-];
+
 const OverviewCard: React.FC<Props> = ({ title, status, amount, style }) => {
   return (
     <div
@@ -43,19 +19,7 @@ const OverviewCard: React.FC<Props> = ({ title, status, amount, style }) => {
           <p className="text-2xl font-semibold">{amount}</p>
           <p className="text-black-cool text-[14px] font-semibold">Monthly</p>
         </div>
-        <div className="w-full h-full col-span-2">
-          <ResponsiveContainer width="100%" height="100%">
-            <AreaChart width={400} height={100} data={data}>
-              <Area
-                type="monotone"
-                dataKey="uv"
-                stroke="#5F6D7E"
-                fill="#E9EBEE"
-                fillOpacity={0.6}
-              />
-            </AreaChart>
-          </ResponsiveContainer>
-        </div>
+        <div className="w-full h-full col-span-2"></div>
       </div>
     </div>
   );
