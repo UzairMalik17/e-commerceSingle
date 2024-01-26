@@ -6,6 +6,29 @@ interface Props {
   amount: string;
   style?: string;
 }
+const data = [
+  {
+    uv: 9400,
+  },
+  {
+    uv: 10398,
+  },
+  {
+    uv: 19800,
+  },
+  {
+    uv: 13908,
+  },
+  {
+    uv: 14800,
+  },
+  {
+    uv: 23800,
+  },
+  {
+    uv: 24300,
+  },
+];
 
 const OverviewCard: React.FC<Props> = ({ title, status, amount, style }) => {
   return (
@@ -21,7 +44,7 @@ const OverviewCard: React.FC<Props> = ({ title, status, amount, style }) => {
           <p className="text-black-cool text-[14px] font-semibold">Monthly</p>
         </div>
         <div className="w-full h-full col-span-2">
-          <Chart />
+          <Chart data={data} />
         </div>
       </div>
     </div>

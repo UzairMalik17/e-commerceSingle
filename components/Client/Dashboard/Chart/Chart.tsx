@@ -1,30 +1,12 @@
 import React from "react";
 import { AreaChart, Area, ResponsiveContainer } from "recharts";
+interface Props {
+  data: {
+    uv: number;
+  }[];
+}
 
-const data = [
-  {
-    uv: 9400,
-  },
-  {
-    uv: 10398,
-  },
-  {
-    uv: 19800,
-  },
-  {
-    uv: 13908,
-  },
-  {
-    uv: 14800,
-  },
-  {
-    uv: 23800,
-  },
-  {
-    uv: 24300,
-  },
-];
-const Chart = () => {
+const Chart: React.FC<Props> = ({ data }) => {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <AreaChart width={400} height={100} data={data}>
