@@ -20,7 +20,7 @@ const CardData = [
 const DashboardComponent = () => {
   return (
     <div className="w-full h-full flex flex-col items-center justify start gap-8 pt-4 pb-8">
-      <div className="w-full h-full grid lg:grid-cols-3 gap-4">
+      <div className="w-full h-full grid grid-cols-1 lg:grid-cols-3 gap-4">
         {CardData.map((item, index) => {
           return (
             <OverviewCard

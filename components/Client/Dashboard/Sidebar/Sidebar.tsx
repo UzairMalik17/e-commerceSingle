@@ -41,7 +41,7 @@ const Sidebar = () => {
   };
   return (
     <div className="w-full h-full bg-background">
-      <div className="w-full h-full hidden md:flex flex-col items-center justify-between gap-6 p-4">
+      <div className="w-full h-full hidden md:flex flex-col items-center justify-between p-4">
         <div className="w-full h-full flex flex-col items-center justify-start gap-8">
           <Link href="/" className="relative w-[153px] h-[70px]">
             <Image
@@ -87,15 +87,15 @@ const Sidebar = () => {
           </Link>
         </div>
       </div>
-      <div className="w-full h-full flex md:hidden flex-row items-center justify-between px-4">
-        <div className="w-full h-full">
-          <RiMenu2Line className="w-8 h-8" onClick={toggleDrawer} />
+      <div className="w-full h-full flex md:hidden items-center justify-between bg-background px-4">
+        <div className="w-8 h-8">
+          <RiMenu2Line className="w-full h-full" onClick={toggleDrawer} />
           <Drawer
             open={isOpen}
             onClose={toggleDrawer}
             direction="left"
             size={"70vw"}>
-            <div className="w-full h-full flex flex-col items-center justify-between gap-6 bg-background p-4">
+            <div className="w-full h-full flex flex-col items-center justify-between bg-background p-4">
               <div className="w-full h-full flex flex-col items-center justify-start gap-8">
                 <Link href="/" className="relative w-[153px] h-[70px]">
                   <Image
