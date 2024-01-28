@@ -1,6 +1,7 @@
 import React from "react";
 import OverviewCard from "./OverviewCard/OverviewCard";
 import Statistics from "./Statistics/Statistics";
+import RecentSales from "./RecentSales/RecentSales";
 const CardData = [
   {
     title: "Orders",
@@ -35,6 +36,9 @@ const DashboardComponent = () => {
         })}
       </div>
       <Statistics />
+      <div className="w-full h-[400px] grid lg:grid-cols-2 gap-4">
+        <RecentSales />
+      </div>
     </div>
   );
 };
