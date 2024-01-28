@@ -54,8 +54,8 @@ const Sidebar = () => {
           <div className="w-full flex flex-col items-center justify-start gap-4">
             <p className="text-sm">Welcome back</p>
             <div className="relative w-[60px] h-[60px] bg-[url('/Assets/Dashboard/User.jpg')] bg-center bg-cover bg-no-repeat rounded-full group">
-              <div className="w-full h-full flex items-center justify-center rounded-full bg-black bg-opacity-0 group-hover:bg-opacity-50 hover:cursor-pointer transition-opacity">
-                <FiEdit className="w-[25px] h-[25px] text-white opacity-0 group-hover:opacity-100" />
+              <div className="w-full h-full flex items-center justify-center rounded-full bg-black-main bg-opacity-0 group-hover:bg-opacity-50 hover:cursor-pointer transition-opacity">
+                <FiEdit className="w-[25px] h-[25px] text-white-main opacity-0 group-hover:opacity-100" />
               </div>
               <div className="w-3 h-3 rounded-full bg-leafGreen absolute right-0.5 bottom-0.5 z-20 border-2 border-solid border-background">
                 <div className="w-full h-full rounded-full animate-ping bg-leafGreen z-20"></div>
