@@ -20,7 +20,7 @@ const layout: React.FC<Props> = ({ children }: Props) => {
       } ${inter.className}`}>
       {!AdminRoute && <Navbar />}
       {AdminRoute && (
-        <div className={`w-full h-20 md:h-screen`}>
+        <div className={`w-full h-20 md:h-screen sticky top-0`}>
           <Sidebar />
         </div>
       )}
