@@ -3,6 +3,7 @@ import OverviewCard from "./OverviewCard/OverviewCard";
 import Statistics from "./Statistics/Statistics";
 import RecentSales from "./RecentSales/RecentSales";
 import RecentMessages from "./RecentMessages/RecentMessages";
+import OrdersCard from "./BuyersCard/BuyersCard";
 const CardData = [
   {
     title: "Orders",
@@ -41,6 +42,7 @@ const DashboardComponent = () => {
         <RecentSales />
         <RecentMessages />
       </div>
+      <OrdersCard />
     </div>
   );
 };
