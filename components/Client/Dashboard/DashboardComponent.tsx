@@ -38,7 +38,7 @@ const DashboardComponent = () => {
         })}
       </div>
       <Statistics />
-      <div className="w-full h-[400px] grid lg:grid-cols-2 gap-4">
+      <div className="w-full h-full grid lg:grid-cols-2 gap-4">
         <RecentSales />
         <RecentMessages />
       </div>
