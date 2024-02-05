@@ -1,6 +1,6 @@
 import React from "react";
 import { useRef } from "react";
-import BuyersPopup from "./BuyersPopup";
+import BuyersPopup from "./BuyersPopup/BuyersPopup";
 interface Props {
   Buyer: string;
   img?: string;
@@ -26,7 +26,6 @@ const BuyersRow: React.FC<Props> = ({
             backgroundImage: `url(${img})`,
           }}
           className={`w-[40px] h-[40px] bg-center bg-cover bg-no-repeat rounded-full ${style}`}></div>
-
         <p className={`${style}`}>{Buyer}</p>
       </div>
       <p className={`${style}`}>{PurchasedProducts}</p>
@@ -43,6 +42,7 @@ const BuyersRow: React.FC<Props> = ({
       </button>
       <BuyersPopup
         reference={dialogRef}
+        image={img}
         CloseHandler={() => {
           dialogRef.current?.close();
         }}
