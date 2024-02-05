@@ -54,12 +54,15 @@ const BuyersPopup: React.FC<Props> = ({
   return (
     <dialog
       ref={reference}
-      className="w-full sm:w-[600px] backdrop:bg-black-main backdrop:opacity-50 rounded">
+      className="w-full sm:w-[600px] backdrop:bg-black-main backdrop:opacity-50 rounded font-semibold">
       <div className="w-full flex flex-row items-center justify-between bg-lightningYellow px-6 py-4">
         <p className="text-white-main">Buyers Detail</p>
-        <IoIosClose className="w-[25px] h-[25px] bg-red text-white-main rounded-full" />
+        <IoIosClose
+          className="w-[25px] h-[25px] bg-red text-white-main rounded-full"
+          onClick={CloseHandler}
+        />
       </div>
-      <div className="w-full flex flex-col items-center justify-start gap-4 text-sm p-6">
+      <div className="w-full flex flex-col items-center justify-start gap-4 text-xs p-6">
         <div
           style={{
             backgroundImage: `url(${image})`,
@@ -67,7 +70,12 @@ const BuyersPopup: React.FC<Props> = ({
           className={`w-[80px] h-[80px] bg-center bg-cover bg-no-repeat rounded-full ${style}`}></div>
         {PopusInfo.map((item, index) => {
           return (
-            <PopupRow key={index} heading={item.heading} value={item.value} />
+            <PopupRow
+              key={index}
+              heading={item.heading}
+              value={item.value}
+              style={`${(index === 0 || index === 5) && "text-base py-2"}`}
+            />
           );
         })}
         <div className="w-full flex items-center justify-end gap-4">
