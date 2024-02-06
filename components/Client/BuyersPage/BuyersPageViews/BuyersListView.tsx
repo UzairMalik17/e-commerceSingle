@@ -323,9 +323,13 @@ const buyers = [
     style: "",
   },
 ];
-const BuyersListView = () => {
+interface Props {
+  style: string;
+}
+const BuyersListView: React.FC<Props> = ({ style }) => {
   return (
-    <section className="w-full h-[600px] flex flex-col items-start justify-start bg-background border-[1px] drop-shadow-lg rounded-lg border-lightGray overflow-hidden">
+    <section
+      className={`w-full h-[600px] flex flex-col items-start justify-start bg-background border-[1px] drop-shadow-lg rounded-lg border-lightGray overflow-hidden ${style}`}>
       <div className="w-full flex flex-row items-center justify-between p-4">
         <p>Buyers</p>
         <div className="w-[115px] bg-black-main text-center text-white-main text-sm p-2">
