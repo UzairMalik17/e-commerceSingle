@@ -1,7 +1,7 @@
 import React from "react";
 interface Props {
   heading: string;
-  value: string;
+  value: any;
   style?: string;
 }
 const PopupRow: React.FC<Props> = ({ heading, value, style }) => {

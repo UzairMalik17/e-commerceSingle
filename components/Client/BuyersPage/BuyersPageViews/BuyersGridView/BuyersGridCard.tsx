@@ -5,12 +5,26 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { LuMail } from "react-icons/lu";
 import { MdMapsHomeWork } from "react-icons/md";
 interface Props {
+  Buyer: string;
   img: string;
+  PurchasedProducts: string;
+  Address: string;
+  AmountSpent: string;
+  email: string;
+  phoneNumber: string;
 }
-const BuyersGridCard: React.FC<Props> = ({ img }) => {
+const BuyersGridCard: React.FC<Props> = ({
+  Buyer,
+  img,
+  PurchasedProducts,
+  Address,
+  AmountSpent,
+  phoneNumber,
+  email,
+}) => {
   const dialogRef = useRef<HTMLDialogElement>();
   return (
-    <section className="w-[600px] h-full flex flex-col items-center justify-start gap-4 bg-background border-[1px] drop-shadow-lg rounded-lg border-lightGray p-4">
+    <section className="w-full h-full flex flex-col items-center justify-start gap-6 bg-background border-[1px] drop-shadow-lg rounded-lg border-lightGray p-4">
       <div className="w-full grid grid-cols-[0.75fr,2.25fr] items-center justify-center gap-2">
         <div className="w-full flex item-center justify-center">
           <div
@@ -21,7 +35,7 @@ const BuyersGridCard: React.FC<Props> = ({ img }) => {
         </div>
         <div className="w-full flex flex-col items-start justify-start gap-4">
           <div className="w-full flex flex-row items-center justify-between gap-2">
-            <p>Jason Jacob</p>
+            <p>{Buyer}</p>
             <button
               className="flex items-center justify-start"
               onClick={() => {
@@ -32,32 +46,36 @@ const BuyersGridCard: React.FC<Props> = ({ img }) => {
               </p>
             </button>
           </div>
-          <div className="w-full flex flex-col justify-start items-start gap-2">
+          <div className="w-full flex flex-col justify-start items-start gap-2 text-xs">
             <div className="w-full flex items-center justify-start gap-2">
-              <FaPhoneAlt />
-              <p className={``}>+923409574</p>
+              <FaPhoneAlt className="w-4 h-4" />
+              <p className={``}>{phoneNumber}</p>
             </div>
             <div className="w-full flex items-center justify-start gap-2">
-              <LuMail />
-              <p className={``}>JhonMckay@gmail.com</p>
+              <LuMail className="w-5 h-5" />
+              <p className={``}>{email}</p>
             </div>
             <div className="w-full flex items-center justify-start gap-2">
-              <MdMapsHomeWork />
-              <p className={``}>st Paul Street Los Vegas</p>
+              <MdMapsHomeWork className="w-5 h-5" />
+              <p className={``}>{Address}</p>
             </div>
           </div>
         </div>
       </div>
       <div className="w-full h-[1px] bg-lightGray"></div>
-      <div className="w-full h-full flex items-center justify-between gap-4">
-        <div className="flex flex-col justify-center item-center text-center gap-4">
-          <p>Purchased Products</p>
-          <p>23</p>
+      <div className="w-full h-full grid grid-cols-[10fr,0.15fr,10fr] items-start justify-start gap-4 text-sm">
+        <div className="w-full flex justify-start item-center">
+          <div className="flex flex-col justify-center item-center text-center gap-4">
+            <p>Purchased Products</p>
+            <p>{PurchasedProducts}</p>
+          </div>
         </div>
         <div className="w-[2px] h-full bg-lightGray"></div>
-        <div className="flex flex-col justify-center item-center text-center gap-4">
-          <p>Amount Spent</p>
-          <p>$453</p>
+        <div className="w-full flex justify-end item-center">
+          <div className="flex flex-col justify-center item-center text-center gap-4">
+            <p>Amount Spent</p>
+            <p>{AmountSpent}</p>
+          </div>
         </div>
       </div>
       <BuyersPopup

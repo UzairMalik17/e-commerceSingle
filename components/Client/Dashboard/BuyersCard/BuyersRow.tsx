@@ -3,10 +3,13 @@ import { useRef } from "react";
 import BuyersPopup from "./BuyersPopup/BuyersPopup";
 interface Props {
   Buyer: string;
-  img?: string;
+  img: string;
   PurchasedProducts: string;
   Address: string;
   AmountSpent: string;
+  email: string;
+  phoneNumber: string;
+  JoiningDate: string;
   style?: string;
 }
 const BuyersRow: React.FC<Props> = ({
@@ -16,6 +19,9 @@ const BuyersRow: React.FC<Props> = ({
   Address,
   AmountSpent,
   style,
+  email,
+  phoneNumber,
+  JoiningDate,
 }) => {
   const dialogRef = useRef<HTMLDialogElement>();
   return (
@@ -43,6 +49,13 @@ const BuyersRow: React.FC<Props> = ({
       <BuyersPopup
         reference={dialogRef}
         image={img}
+        Buyer={Buyer}
+        PurchasedProducts={PurchasedProducts}
+        AmountSpent={AmountSpent}
+        Address={Address}
+        email={email}
+        phoneNumber={phoneNumber}
+        JoiningDate={JoiningDate}
         CloseHandler={() => {
           dialogRef.current?.close();
         }}

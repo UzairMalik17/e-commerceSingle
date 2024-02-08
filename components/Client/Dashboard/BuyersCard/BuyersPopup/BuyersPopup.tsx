@@ -1,26 +1,27 @@
 import React from "react";
 import { IoIosClose } from "react-icons/io";
 import PopupRow from "./PopupRow";
-const PopusInfo = [
+interface PopusInfo {}
+const PopusInfo: { heading: string; value: any }[] = [
   {
     heading: "Personal Information",
     value: "",
   },
   {
     heading: "Name",
-    value: "Jacob Jason",
+    value: { Buyer },
   },
   {
     heading: "Email",
-    value: "JhonMckay@gmail.com",
+    value: { email },
   },
   {
     heading: "Phone",
-    value: "+923409574",
+    value: { phoneNumber },
   },
   {
     heading: "Address",
-    value: "st Paul Street Los Vegas",
+    value: { Address },
   },
   {
     heading: "Professional Information",
@@ -28,15 +29,15 @@ const PopusInfo = [
   },
   {
     heading: "Purchased Products",
-    value: "23",
+    value: { PurchasedProducts },
   },
   {
     heading: "Amount Spent",
-    value: "$453",
+    value: { AmountSpent },
   },
   {
     heading: "Joinig Date",
-    value: "24-03-2021",
+    value: { JoiningDate },
   },
 ];
 interface Props {
@@ -44,12 +45,26 @@ interface Props {
   reference: any;
   image: string;
   style?: string;
+  Buyer: string;
+  PurchasedProducts: string;
+  Address: string;
+  AmountSpent: string;
+  email: string;
+  phoneNumber: string;
+  JoiningDate: string;
 }
 const BuyersPopup: React.FC<Props> = ({
   CloseHandler,
   reference,
   image,
   style,
+  Buyer,
+  PurchasedProducts,
+  Address,
+  AmountSpent,
+  phoneNumber,
+  email,
+  JoiningDate,
 }) => {
   return (
     <dialog
