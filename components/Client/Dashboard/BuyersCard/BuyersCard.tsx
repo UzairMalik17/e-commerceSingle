@@ -1,45 +1,82 @@
 import React from "react";
-import BuyersRow from "./BuyersRow";
-const menu = ["Buyer", "Address", "PurchasedProducts", "AmountSpent"];
+import BuyersRow from "../../../Shared/Buyers/Buyer Row/BuyersRow";
+const menu = ["BuyerName", "Address", "PurchasedProducts", "AmountSpent"];
 const buyers = [
   {
-    Buyer: "Jacob Jason",
+    BuyerName: "Jacob Jason",
     img: "/Assets/Dashboard/User.jpg",
-    PurchasedProducts: "st Paul Street Los Vegas",
-    Address: "23",
+    PurchasedProducts: "23",
+    Address: "st Paul Street Los Vegas",
     AmountSpent: "$453",
+    email: "JhonMckay@gmail.com",
+    phoneNumber: "+923409574",
+    JoiningDate: "24-03-2021",
     style: "",
   },
   {
-    Buyer: "Jacob Jason",
+    BuyerName: "Jacob Jason",
     img: "/Assets/Dashboard/User.jpg",
-    PurchasedProducts: "st Paul Street Los Vegas",
-    Address: "23",
+    PurchasedProducts: "23",
+    Address: "st Paul Street Los Vegas",
     AmountSpent: "$453",
+    email: "JhonMckay@gmail.com",
+    phoneNumber: "+923409574",
+    JoiningDate: "24-03-2021",
     style: "",
   },
   {
-    Buyer: "Jacob Jason",
+    BuyerName: "Jacob Jason",
     img: "/Assets/Dashboard/User.jpg",
-    PurchasedProducts: "st Paul Street Los Vegas",
-    Address: "23",
+    PurchasedProducts: "23",
+    Address: "st Paul Street Los Vegas",
     AmountSpent: "$453",
+    email: "JhonMckay@gmail.com",
+    phoneNumber: "+923409574",
+    JoiningDate: "24-03-2021",
     style: "",
   },
   {
-    Buyer: "Jacob Jason",
+    BuyerName: "Jacob Jason",
     img: "/Assets/Dashboard/User.jpg",
-    PurchasedProducts: "st Paul Street Los Vegas",
-    Address: "23",
+    PurchasedProducts: "23",
+    Address: "st Paul Street Los Vegas",
     AmountSpent: "$453",
+    email: "JhonMckay@gmail.com",
+    phoneNumber: "+923409574",
+    JoiningDate: "24-03-2021",
     style: "",
   },
   {
-    Buyer: "Jacob Jason",
+    BuyerName: "Jacob Jason",
     img: "/Assets/Dashboard/User.jpg",
-    PurchasedProducts: "st Paul Street Los Vegas",
-    Address: "23",
+    PurchasedProducts: "23",
+    Address: "st Paul Street Los Vegas",
     AmountSpent: "$453",
+    email: "JhonMckay@gmail.com",
+    phoneNumber: "+923409574",
+    JoiningDate: "24-03-2021",
+    style: "",
+  },
+  {
+    BuyerName: "Jacob Jason",
+    img: "/Assets/Dashboard/User.jpg",
+    PurchasedProducts: "23",
+    Address: "st Paul Street Los Vegas",
+    AmountSpent: "$453",
+    email: "JhonMckay@gmail.com",
+    phoneNumber: "+923409574",
+    JoiningDate: "24-03-2021",
+    style: "",
+  },
+  {
+    BuyerName: "Jacob Jason",
+    img: "/Assets/Dashboard/User.jpg",
+    PurchasedProducts: "23",
+    Address: "st Paul Street Los Vegas",
+    AmountSpent: "$453",
+    email: "JhonMckay@gmail.com",
+    phoneNumber: "+923409574",
+    JoiningDate: "24-03-2021",
     style: "",
   },
 ];
@@ -65,11 +102,14 @@ const BuyersCard = () => {
         return (
           <BuyersRow
             key={index}
-            Buyer={item.Buyer}
+            BuyerName={item.BuyerName}
             img={item.img}
             Address={item.Address}
             PurchasedProducts={item.PurchasedProducts}
             AmountSpent={item.AmountSpent}
+            email={item.email}
+            phoneNumber={item.phoneNumber}
+            JoiningDate={item.JoiningDate}
             style={`text-[10px]`}
           />
         );

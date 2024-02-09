@@ -1,51 +1,13 @@
 import React from "react";
 import { IoIosClose } from "react-icons/io";
 import PopupRow from "./PopupRow";
-interface PopusInfo {}
-const PopusInfo: { heading: string; value: any }[] = [
-  {
-    heading: "Personal Information",
-    value: "",
-  },
-  {
-    heading: "Name",
-    value: { Buyer },
-  },
-  {
-    heading: "Email",
-    value: { email },
-  },
-  {
-    heading: "Phone",
-    value: { phoneNumber },
-  },
-  {
-    heading: "Address",
-    value: { Address },
-  },
-  {
-    heading: "Professional Information",
-    value: "",
-  },
-  {
-    heading: "Purchased Products",
-    value: { PurchasedProducts },
-  },
-  {
-    heading: "Amount Spent",
-    value: { AmountSpent },
-  },
-  {
-    heading: "Joinig Date",
-    value: { JoiningDate },
-  },
-];
+
 interface Props {
   CloseHandler: any;
   reference: any;
   image: string;
   style?: string;
-  Buyer: string;
+  BuyerName: string;
   PurchasedProducts: string;
   Address: string;
   AmountSpent: string;
@@ -58,7 +20,7 @@ const BuyersPopup: React.FC<Props> = ({
   reference,
   image,
   style,
-  Buyer,
+  BuyerName,
   PurchasedProducts,
   Address,
   AmountSpent,
@@ -66,6 +28,44 @@ const BuyersPopup: React.FC<Props> = ({
   email,
   JoiningDate,
 }) => {
+  const PopusInfo: { heading: string; value: any }[] = [
+    {
+      heading: "Personal Information",
+      value: "",
+    },
+    {
+      heading: "Name",
+      value: { BuyerName },
+    },
+    {
+      heading: "Email",
+      value: { email },
+    },
+    {
+      heading: "Phone",
+      value: { phoneNumber },
+    },
+    {
+      heading: "Address",
+      value: { Address },
+    },
+    {
+      heading: "Professional Information",
+      value: "",
+    },
+    {
+      heading: "Purchased Products",
+      value: { PurchasedProducts },
+    },
+    {
+      heading: "Amount Spent",
+      value: { AmountSpent },
+    },
+    {
+      heading: "Joinig Date",
+      value: { JoiningDate },
+    },
+  ];
   return (
     <dialog
       ref={reference}
@@ -73,7 +73,7 @@ const BuyersPopup: React.FC<Props> = ({
       <div className="w-full flex flex-row items-center justify-between bg-lightningYellow px-6 py-4">
         <p className="text-white-main">Buyers Detail</p>
         <IoIosClose
-          className="w-[25px] h-[25px] bg-red text-white-main rounded-full"
+          className="w-[25px] h-[25px] bg-red text-white-main rounded-full cursor-pointer"
           onClick={CloseHandler}
         />
       </div>
@@ -83,16 +83,15 @@ const BuyersPopup: React.FC<Props> = ({
             backgroundImage: `url(${image})`,
           }}
           className={`w-[80px] h-[80px] bg-center bg-cover bg-no-repeat rounded-full ${style}`}></div>
-        {PopusInfo.map((item, index) => {
-          return (
-            <PopupRow
-              key={index}
-              heading={item.heading}
-              value={item.value}
-              style={`${(index === 0 || index === 5) && "text-base py-2"}`}
-            />
-          );
-        })}
+        <PopupRow heading="Personal Information" style="text-base py-2" />
+        <PopupRow heading="Name" value={BuyerName} />
+        <PopupRow heading="Email" value={email} />
+        <PopupRow heading="Phone" value={phoneNumber} />
+        <PopupRow heading="Address" value={Address} />
+        <PopupRow heading="Professional Information" style="text-base py-2" />
+        <PopupRow heading="Purchased Products" value={PurchasedProducts} />
+        <PopupRow heading="Amount Spent" value={AmountSpent} />
+        <PopupRow heading="Joining Date" value={JoiningDate} />
         <div className="w-full flex items-center justify-end gap-4">
           <button
             id="close"

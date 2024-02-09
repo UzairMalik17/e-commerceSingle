@@ -1,26 +1,28 @@
 import React from "react";
 import { useRef } from "react";
-import BuyersPopup from "@/components/Client/Dashboard/BuyersCard/BuyersPopup/BuyersPopup";
+import BuyersPopup from "@/components/Shared/Buyers/Buyer Popup/BuyersPopup";
 import { FaPhoneAlt } from "react-icons/fa";
 import { LuMail } from "react-icons/lu";
 import { MdMapsHomeWork } from "react-icons/md";
 interface Props {
-  Buyer: string;
+  BuyerName: string;
   img: string;
   PurchasedProducts: string;
   Address: string;
   AmountSpent: string;
   email: string;
   phoneNumber: string;
+  JoiningDate: string;
 }
 const BuyersGridCard: React.FC<Props> = ({
-  Buyer,
+  BuyerName,
   img,
   PurchasedProducts,
   Address,
   AmountSpent,
   phoneNumber,
   email,
+  JoiningDate,
 }) => {
   const dialogRef = useRef<HTMLDialogElement>();
   return (
@@ -35,7 +37,7 @@ const BuyersGridCard: React.FC<Props> = ({
         </div>
         <div className="w-full flex flex-col items-start justify-start gap-4">
           <div className="w-full flex flex-row items-center justify-between gap-2">
-            <p>{Buyer}</p>
+            <p>{BuyerName}</p>
             <button
               className="flex items-center justify-start"
               onClick={() => {
@@ -81,6 +83,13 @@ const BuyersGridCard: React.FC<Props> = ({
       <BuyersPopup
         reference={dialogRef}
         image={img}
+        BuyerName={BuyerName}
+        PurchasedProducts={PurchasedProducts}
+        AmountSpent={AmountSpent}
+        Address={Address}
+        email={email}
+        phoneNumber={phoneNumber}
+        JoiningDate={JoiningDate}
         CloseHandler={() => {
           dialogRef.current?.close();
         }}

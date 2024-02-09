@@ -1,8 +1,8 @@
 import React from "react";
 import { useRef } from "react";
-import BuyersPopup from "./BuyersPopup/BuyersPopup";
+import BuyersPopup from "../Buyer Popup/BuyersPopup";
 interface Props {
-  Buyer: string;
+  BuyerName: string;
   img: string;
   PurchasedProducts: string;
   Address: string;
@@ -13,7 +13,7 @@ interface Props {
   style?: string;
 }
 const BuyersRow: React.FC<Props> = ({
-  Buyer,
+  BuyerName,
   img,
   PurchasedProducts,
   Address,
@@ -32,24 +32,24 @@ const BuyersRow: React.FC<Props> = ({
             backgroundImage: `url(${img})`,
           }}
           className={`w-[40px] h-[40px] bg-center bg-cover bg-no-repeat rounded-full ${style}`}></div>
-        <p className={`${style}`}>{Buyer}</p>
+        <p className={`${style}`}>{BuyerName}</p>
       </div>
       <p className={`${style}`}>{PurchasedProducts}</p>
       <p className={`${style}`}>{Address}</p>
       <p className={`${style}`}>{AmountSpent}</p>
-      <button
-        className="w-full flex items-center justify-start"
-        onClick={() => {
-          dialogRef.current?.showModal();
-        }}>
-        <p className="w-6 flex items-center justify-center font-extrabold text-center rounded bg-gray ">
+      <div className="w-full flex items-center justify-start">
+        <button
+          className="w-6 flex items-center justify-center font-extrabold text-center rounded bg-gray"
+          onClick={() => {
+            dialogRef.current?.showModal();
+          }}>
           ...
-        </p>
-      </button>
+        </button>
+      </div>
       <BuyersPopup
         reference={dialogRef}
         image={img}
-        Buyer={Buyer}
+        BuyerName={BuyerName}
         PurchasedProducts={PurchasedProducts}
         AmountSpent={AmountSpent}
         Address={Address}
