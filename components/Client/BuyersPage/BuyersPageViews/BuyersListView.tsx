@@ -1,5 +1,7 @@
 import React from "react";
 import BuyersRow from "../../../Shared/Buyers/Buyer Row/BuyersRow";
+import BuyersPagination from "../BuyersPagination/BuyersPagination";
+import { CiSearch } from "react-icons/ci";
 const menu = ["BuyerName", "Address", "PurchasedProducts", "AmountSpent"];
 const buyersInfo = [
   {
@@ -408,9 +410,14 @@ const BuyersListView: React.FC<Props> = ({ style }) => {
       className={`w-full h-[600px] flex flex-col items-start justify-start bg-background border-[1px] drop-shadow-lg rounded-lg border-lightGray overflow-hidden ${style}`}>
       <div className="w-full flex flex-row items-center justify-between p-4">
         <p>Buyers</p>
-        <div className="w-[115px] bg-black-main text-center text-white-main text-sm p-2">
-          View More
-        </div>
+        <form className="w-[280px] h-[40px] flex flex-row items-center justify-start rounded-full">
+          <input className="w-[240px] h-full" placeholder="Search here..." />
+          <input
+            type="submit"
+            value={""}
+            className="w-[40px] h-full bg-black-main p-2"
+          />
+        </form>
       </div>
       <div className="w-full grid grid-cols-[1.5fr,1fr,1fr,1fr,0.5fr] items-center justify-start border-t-[1px]  border-lightGray gap-2 p-4">
         {menu.map((item, index) => {
@@ -439,8 +446,8 @@ const BuyersListView: React.FC<Props> = ({ style }) => {
           );
         })}
       </div>
-      <div className="w-full flex items-center bg-lavaRed text-white-main py-6">
-        Pagination
+      <div className="w-full flex items-center justify-center py-6">
+        <BuyersPagination />
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import BuyersGridCard from "./BuyersGridCard";
+import BuyersPagination from "../../BuyersPagination/BuyersPagination";
 const buyersInfo = [
   {
     BuyerName: "Jacob Jason",
@@ -403,24 +404,27 @@ interface Props {
 }
 const BuyersGridView: React.FC<Props> = ({ style }) => {
   return (
-    <div
-      className={`w-full h-full grid md:grid-cols-2 lg:grid-cols-3 gap-6 ${style}`}>
-      {buyersInfo.map((item, index) => {
-        return (
-          <BuyersGridCard
-            key={index}
-            img={item.img}
-            BuyerName={item.BuyerName}
-            PurchasedProducts={item.PurchasedProducts}
-            Address={item.Address}
-            AmountSpent={item.AmountSpent}
-            email={item.email}
-            phoneNumber={item.phoneNumber}
-            JoiningDate={item.JoiningDate}
-          />
-        );
-      })}
-    </div>
+    <section className="w-full h-full flex flex-col items-center justify-start gap-8">
+      <div
+        className={`w-full h-full grid md:grid-cols-2 lg:grid-cols-3 gap-6 ${style}`}>
+        {buyersInfo.map((item, index) => {
+          return (
+            <BuyersGridCard
+              key={index}
+              img={item.img}
+              BuyerName={item.BuyerName}
+              PurchasedProducts={item.PurchasedProducts}
+              Address={item.Address}
+              AmountSpent={item.AmountSpent}
+              email={item.email}
+              phoneNumber={item.phoneNumber}
+              JoiningDate={item.JoiningDate}
+            />
+          );
+        })}
+      </div>
+      <BuyersPagination />
+    </section>
   );
 };
 
